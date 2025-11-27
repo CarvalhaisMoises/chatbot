@@ -1,98 +1,114 @@
 body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-color: #000000;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', Arial, sans-serif;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 480px;
-      background-color: #111111;
-      border: 2px solid #ff6a00;
-      border-radius: 16px;
-      padding: 40px 30px;
-      text-align: center;
-      box-shadow: 0 0 30px rgba(255, 106, 0, 0.4);
-    }
-
-    h1 {
-      color: #ff6a00;
-      margin-bottom: 30px;
-      font-size: 28px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-  .mic-button {
-  width: 140px;
-  height: 50px;
-  background: linear-gradient(135deg, #ff6a00, #ff8c33);
-  border-radius: 50px;       /* forma mais moderna, arredondada */
-  border: 2px solid #ff6a00;
-  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #4b80fd 0%, #334766 100%); /* fundo escuro sofisticado */
+  color: #e2e8f0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px auto;
-  box-shadow: 0 0 20px rgba(255, 106, 0, 0.4);
-  transition: all 0.35s ease;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 480px;
+  background-color: #4363ac;
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 48px 36px;
+  text-align: center;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(148, 163, 244, 0.15); /* brilho sutil azul claro */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+h1 {
+  color: #e0e7ff;
+  margin-bottom: 32px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  background: linear-gradient(90deg, #a5b4fc, #c3d9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mic-button {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(135deg, #e0e7ff 0%, #a5b4fc 100%);
+  border-radius: 50%;                    /* botão redondo = mais moderno e premium */
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  box-shadow: 
+    0 10px 30px rgba(165, 180, 252, 0.4),
+    0 0 0 8px rgba(165, 180, 252, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #1e293b;
+  font-weight: 600;
   font-size: 18px;
-  font-weight: bold;
-  color: #000000;
 }
 
-/* Efeito ao passar o mouse */
+/* Hover premium com leve “levitação” e brilho” */
 .mic-button:hover {
-  background: linear-gradient(135deg, #ff8c33, #ffaa66);
-  transform: scale(1.12);
-  box-shadow: 0 0 32px rgba(255, 120, 20, 0.8);
+  transform: translateY(-8px) scale(1.08);
+  box-shadow: 
+    0 20px 40px rgba(165, 180, 252, 0.5),
+    0 0 0 12px rgba(165, 180, 252, 0.25);
+  background: linear-gradient(135deg, #ffffff 0%, #c3d9ff 100%);
 }
 
-/* Efeito ao clicar */
+/* Clique com efeito de “pulsar” suave */
 .mic-button:active {
-  transform: scale(1.04);
-  box-shadow: 0 0 18px rgba(255, 120, 20, 0.6);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 
+    0 12px 30px rgba(165, 180, 252, 0.45),
+    0 0 0 10px rgba(165, 180, 252, 0.2);
 }
 
-    /* Ampliação bem visível ao passar o mouse */
-    .mic-button:hover {
-      background-color: #ff8c33;
-      transform: scale(1.22);               /* cresce cerca de 22% */
-      box-shadow: 0 0 45px rgba(255, 106, 0, 0.9);
-    }
+.mic-icon {
+  width: 56px;
+  height: 56px;
+  fill: #1e293b;
+  margin-bottom: 8px;
+  transition: all 0.4s ease;
+}
 
-    /* Efeito ao clicar (pequeno "afundar") */
-    .mic-button:active {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 106, 0, 0.7);
-    }
+.mic-button:hover .mic-icon {
+  transform: scale(1.15);
+  fill: #1e40af;
+}
 
-    .mic-icon {
-      width: 40px;
-      height: 40px;
-      fill: #000000;
-      transition: all 0.35s ease;
-    }
+p {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 360px;
+  margin: 0 auto;
+}
 
-    /* O ícone também cresce junto com o botão */
-    .mic-button:hover .mic-icon {
-      transform: scale(1.15);
-    }
+.footer {
+  margin-top: 48px;
+  font-size: 14px;
+  color: #64748b;
+}
 
-    p {
-      color: #cccccc;
-      font-size: 16px;
-      line-height: 1.5;
-    }
+.footer a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #ff6a00;
-    }
+.footer a:hover {
+  color: #c3d9ff;
+  text-decoration: underline;
+}
