@@ -1,0 +1,98 @@
+body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #000000;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 480px;
+      background-color: #111111;
+      border: 2px solid #ff6a00;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 106, 0, 0.4);
+    }
+
+    h1 {
+      color: #ff6a00;
+      margin-bottom: 30px;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+  .mic-button {
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(135deg, #ff6a00, #ff8c33);
+  border-radius: 50px;       /* forma mais moderna, arredondada */
+  border: 2px solid #ff6a00;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.4);
+  transition: all 0.35s ease;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Efeito ao passar o mouse */
+.mic-button:hover {
+  background: linear-gradient(135deg, #ff8c33, #ffaa66);
+  transform: scale(1.12);
+  box-shadow: 0 0 32px rgba(255, 120, 20, 0.8);
+}
+
+/* Efeito ao clicar */
+.mic-button:active {
+  transform: scale(1.04);
+  box-shadow: 0 0 18px rgba(255, 120, 20, 0.6);
+}
+
+    /* Ampliação bem visível ao passar o mouse */
+    .mic-button:hover {
+      background-color: #ff8c33;
+      transform: scale(1.22);               /* cresce cerca de 22% */
+      box-shadow: 0 0 45px rgba(255, 106, 0, 0.9);
+    }
+
+    /* Efeito ao clicar (pequeno "afundar") */
+    .mic-button:active {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 106, 0, 0.7);
+    }
+
+    .mic-icon {
+      width: 40px;
+      height: 40px;
+      fill: #000000;
+      transition: all 0.35s ease;
+    }
+
+    /* O ícone também cresce junto com o botão */
+    .mic-button:hover .mic-icon {
+      transform: scale(1.15);
+    }
+
+    p {
+      color: #cccccc;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #ff6a00;
+    }

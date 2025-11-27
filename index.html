@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <div class="container">
+
+    <div class="chatbox">
+    <h2> Chatbot por Voz</h2>
+    <button class="mic-button" onclick="ouvir()">Falar Agora</button>    
+    <div id="respostaTexto"></div>
+    </div>        
+        
+        
+    <script>
+        
+        const pergunta = [
+            "como você está",
+            "doenças hereditárias",
+            "banho do rn",
+            "teste do pezinho",
+            "primeiras vacinas",
+            "importância do canguru"
+        ];
+        
+        const resposta = [
+            "Estou ótimo! Obrigado por perguntar.",
+            "O teste para detectar doenças hereditárias em 2026 será o teste do pezinho.",
+            "A sequência indicada por profissionais é: rosto, cabeça, corpo e genitais.",
+    "O ideal é realizar o teste do pezinho entre o terceiro e o quinto dia de vida.",
+    "As primeiras vacinas são Hepatite B e B C G.",
+    "O método canguru fortalece o vínculo e melhora o bem estar do bebê."
+];
+
+
+function falar(texto) {
+    const discurso = new SpeechSynthesisUtterance(texto);
+    discurso.lang = "pt-BR";
+    discurso.rate = 1;
+    window.speechSynthesis.speak(discurso);
+    
+    document.getElementById("respostaTexto").innerText = texto;
+}
+
+
+function ouvir() {
+    
+    const reconhecer = new webkitSpeechRecognition();
+    reconhecer.lang = "pt-BR";
+    reconhecer.start();
+    
+    reconhecer.onresult = function(event) {
+        
+        const textoFalado = event.results[0][0].transcript.toLowerCase();
+        console.log("Você disse:", textoFalado);
+        
+        for (let i = 0; i < pergunta.length; i++) {
+            if (textoFalado.includes(pergunta[i])) {
+                falar(resposta[i]);
+                return;
+            }
+        }
+        
+        falar("Desculpe, eu não entendi sua pergunta.");
+    };
+}
+
+    </script>
+    </div>
+</body>
+</html>
